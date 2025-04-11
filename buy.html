@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importados Brasil | COMPRA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="dolar()">
+    <header>
+        <a style="color: white;">Suporte</a>
+        <a style="color: white;">Sobre</a>
+        <img src="img/icons8-existir-24.png" alt="Logo">
+        <a style="color: white;">Loja</a>
+        <a style="color: white;">Conta</a>
+    </header>
+    <main>
+        <div class="principal">
+            <div>
+            </div>
+            <div class="compra">
+                <img id="capa" src="" alt="">
+
+                <div class="valores">
+                    <p class="valor" id="valorR"></p>
+                    <hr>
+                    <p class="valor2" id="valor2">sla</p>
+                </div>
+                <button class="B_compra" onclick="fimCompra()">Comprar</button>
+                <div class="cep">
+                    <p style="color: white;">cep</p>
+                    <input type="number" id="cep" autocomplete="off"><br>
+                    <input id="regiao2" class="regiao" readonly></input><br>
+                    <input id="valorRegiao" class="regiao" readonly></input><br>
+
+                    <button onclick="CalculoFrete()">confirmar</button><br><br>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <script>
+        fetch('games.json').then(response => response.json())
+            .then(Jogos => {
+                id = sessionStorage.getItem('id')
+                sessionStorage.setItem('preco', Jogos.Jogos[id].preco)
+
+                document.getElementById('valorR').innerHTML = 'real: ' + Jogos.Jogos[id].preco + 'R$'
+
+
+            })
+
+        function dolar() {
+            fetch('https://economia.awesomeapi.com.br/last/USD-BRL').then(resposta => {
+                return resposta.json()
+            }).then(economia => {
+
+                var valorReais = sessionStorage.getItem('preco') / economia.USDBRL.bid
+
+                document.getElementById('valor2').innerHTML = 'dolar: ' + valorReais.toFixed(2) + '$'
+
+            })
+        }
+
+        function CalculoFrete() {
+            fetch('frete.json')
+                .then(resposta => resposta.json())
+                .then(corpo => {
+                    for (let i = 0; i < corpo.frete.length; i++) {
+                        if (document.getElementById('regiao2').value === corpo.frete[i].regiao) {
+                            sessionStorage.setItem('VFrete', corpo.frete[i].frete);
+                            document.getElementById('valorRegiao').value = corpo.frete[i].frete + 'R$';
+                        }
+                    }
+                });
+        }
+
+
+        function fimCompra() {
+            if (sessionStorage.getItem('VFrete') == null) {
+                alert('nenhum cep inserido')
+            } else {
+                valortotal = parseFloat(sessionStorage.getItem('VFrete')) + parseFloat(sessionStorage.getItem('preco'))
+                alert('seu item foi comprado no valor de: ' + valortotal)
+            }
+
+        }
+        const preencherFormulario = (endereco) => {
+            document.getElementById('regiao2').value = endereco.regiao
+        }
+        const cepValido = (cep) => {
+            if (cep.length == 8) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        const pesquisarCep = async () => {
+            const cep = document.getElementById('cep').value
+            const url = `https://viacep.com.br/ws/${cep}/json/`
+            if (cepValido(cep)) {
+                const dados = await fetch(url);
+                const endereco = await dados.json();
+                preencherFormulario(endereco)
+            }
+        }
+        document.getElementById('cep').addEventListener("focusout", pesquisarCep)
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</body>
+
+</html>

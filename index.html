@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importados Brasil | HOME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a style="color: white;">Suporte</a>
+        <a style="color: white;">Sobre</a>
+        <img src="img/icons8-existir-24.png" alt="Logo">
+        <a style="color: white;">Loja</a>
+        <a style="color: white;">Conta</a>
+    </header>
+    <main>
+        <div class="container">
+            <img id="cont" src="img/POKEMON/pokemon-img1.png" alt="">
+        </div>
+        <div class="destaques">
+            <div class="jogo-1">
+                <p id="dn1"></p>
+                <img id="di1" src="" alt="">
+                <p id="dp1"></p>
+                <button onclick="games(9)">Comprar</button>
+            </div>
+            <div class="jogo-2">
+                <p id="dn2"></p>
+                <img id="di2" src="" alt="">
+                <p id="dp2"></p>
+                <button onclick="games(5)">Comprar</button>
+            </div>
+            <div class="jogo-3">
+                <p id="dn3"></p>
+                <img id="di3" src="" alt="">
+                <p id="dp3"></p>
+                <button onclick="games(0)">Comprar</button>
+            </div>
+            <div class="jogo-4">
+                <p id="dn4"></p>
+                <img id="di4" src="" alt="">
+                <p id="dp4"></p>
+                <button onclick="games(3)">Comprar</button>
+            </div>
+            <div class="jogo-5">
+                <p id="dn5"></p>
+                <img id="di5" src="" alt="">
+                <p id="dp5"></p>
+                <button onclick="games(2)">Comprar</button>
+            </div>
+        </div>
+        <div class="promo">
+            <div class="coloum">
+                <div class="jogo-6">
+                    <p id="pn1"></p>
+                    <img id="pi1" src="" alt="">
+                    <p id="pp1"></p>
+                    <button onclick="games(4)">Comprar</button>
+                </div>
+                <div class="jogo-7">
+                    <p id="pn2"></p>
+                    <img id="pi2" src="" alt="">
+                    <p id="pp2"></p>
+                    <button onclick="games(6)">Comprar</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mid-1">
+                    <img id="pi3" src="" onclick="games(11)" alt="">
+                </div>
+                <div class="mid-2">
+                    <img id="pi4" src="" onclick="games(7)" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="vendidos">
+            <div class="jogo-9">
+                <p id="dn6"></p>
+                <img id="di6" src="" alt="">
+                <p id="dp6"></p>
+                <button onclick="games(1)">Comprar</button>
+            </div>
+            <div class="jogo-10">
+                <p id="dn7"></p>
+                <img id="di7" src="" alt="">
+                <p id="dp7"></p>
+                <button onclick="games(8)">Comprar</button>
+            </div>
+            <div class="jogo-11">
+                <p id="dn8"></p>
+                <img id="di8" src="" alt="">
+                <p id="dp8"></p>
+                <button onclick="games(10)">Comprar</button>
+            </div>
+        </div>
+    </main>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</body>
+<script>
+    /*
+    fetch('games.json').then(response => response.json())
+    .then(jogos =>{
+        var jogo = jogos[1]
+        jogos.forEach(jogo =>{
+            if(jogo.id == 1){
+            document.getElementById('cont').src = jogo.img1
+            }
+        })
+    })
+    */
+
+    fetch('games.json').then(response => response.json())
+        .then(Jogos => {
+            document.getElementById('dn1').innerHTML = Jogos.Jogos[9].nome
+            document.getElementById('di1').src = Jogos.Jogos[9].img2
+            document.getElementById('dp1').innerHTML = Jogos.Jogos[9].preco + 'R$'
+
+            document.getElementById('dn2').innerHTML = Jogos.Jogos[5].nome
+            document.getElementById('di2').src = Jogos.Jogos[5].img5
+            document.getElementById('dp2').innerHTML = Jogos.Jogos[5].preco + 'R$'
+
+            document.getElementById('dn3').innerHTML = Jogos.Jogos[0].nome
+            document.getElementById('di3').src = Jogos.Jogos[0].img5
+            document.getElementById('dp3').innerHTML = Jogos.Jogos[0].preco + 'R$'
+
+            document.getElementById('dn4').innerHTML = Jogos.Jogos[3].nome
+            document.getElementById('di4').src = Jogos.Jogos[3].img5
+            document.getElementById('dp4').innerHTML = Jogos.Jogos[3].preco + 'R$'
+
+            document.getElementById('dn5').innerHTML = Jogos.Jogos[2].nome
+            document.getElementById('di5').src = Jogos.Jogos[2].img5
+            document.getElementById('dp5').innerHTML = Jogos.Jogos[2].preco + 'R$'
+
+            document.getElementById('pn1').innerHTML = Jogos.Jogos[4].nome
+            document.getElementById('pi1').src = Jogos.Jogos[4].img5
+            document.getElementById('pp1').innerHTML = Jogos.Jogos[4].preco + 'R$'
+
+            document.getElementById('pn2').innerHTML = Jogos.Jogos[6].nome
+            document.getElementById('pi2').src = Jogos.Jogos[6].img2
+            document.getElementById('pp2').innerHTML = Jogos.Jogos[6].preco + 'R$'
+
+            document.getElementById('pi3').src = Jogos.Jogos[11].img1
+            document.getElementById('pi4').src = Jogos.Jogos[7].img1
+
+            document.getElementById('dn6').innerHTML = Jogos.Jogos[1].nome
+            document.getElementById('di6').src = Jogos.Jogos[1].img5
+            document.getElementById('dp6').innerHTML = Jogos.Jogos[1].preco + 'R$'
+
+            document.getElementById('dn7').innerHTML = Jogos.Jogos[8].nome
+            document.getElementById('di7').src = Jogos.Jogos[8].img4
+            document.getElementById('dp7').innerHTML = Jogos.Jogos[8].preco + 'R$'
+
+            document.getElementById('dn8').innerHTML = Jogos.Jogos[10].nome
+            document.getElementById('di8').src = Jogos.Jogos[10].img2
+            document.getElementById('dp8').innerHTML = Jogos.Jogos[10].preco + 'R$'
+
+            
+        })
+        function games(id) {
+                sessionStorage.setItem('id', id);
+                window.location.href = 'buy.html'
+            }
+
+    function cont() {
+        const images = [
+            'img/DARK SOULS/dark-souls-img1.png',
+            'img/GOD OF WAR/god-of-war-img1.png',
+            'img/HORIZON FW/horizon-img4.png',
+            'img/POKEMON/pokemon-img3.png'
+        ];
+        let num = 0;
+
+        function mudar_imagem() {
+            document.getElementById('cont').src = images[num];
+            num = (num + 1) % images.length;
+        }
+
+        mudar_imagem();
+
+        setInterval(mudar_imagem, 5000);
+    }
+    window.onload = cont;
+
+</script>
+
+</html>

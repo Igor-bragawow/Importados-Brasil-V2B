@@ -1,0 +1,224 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+
+    gap: 100px;
+
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+
+    background-color: rgb(28, 41, 61);
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+
+    max-width: 900px;
+    width: 80vw;
+    height: 50px;
+
+    gap: 20px;
+
+    background-color: rgb(55, 67, 77);
+
+    border: none;
+    border-radius: 15px;
+}
+main{
+    max-width: 900px;
+    width: 80vw;
+    
+}
+.container img{
+    width: 100%;
+    height: 470px;
+    border-radius: 20px;
+}
+.destaques, .vendidos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    height: 350px;
+
+    margin-top: 20px;
+}
+.destaques img ,.vendidos img{
+    width: 100%;
+}
+.destaques button{
+    width: 100%;
+}
+*[class^="jogo-"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(55, 67, 77);
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    width: 150px;
+    height: 300px;
+}
+*[class^="jogo-"] > img{
+    border: none;
+    border-radius: 10px;
+    height: 150px;
+}
+*[class^="jogo-"] > button{
+    border: none;
+    border-radius: 10px;
+
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    font-size: 20px;
+
+    height: 50px;
+}
+.promo{
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    gap: 20px;
+}
+@media (max-width: 1121px) {
+    .mid-2{
+        display: none;
+    }
+    .row{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 1062px) {
+    .promo{
+        margin-top: 320px;
+    }
+}
+.jogo-6, .jogo-7{
+    height: 230px;
+}
+.jogo-7{
+    margin-top: 10px;
+}
+.jogo-6 img, .jogo-7 img{
+    height: 100px;
+    width: 100px;
+}
+#pi3, #pi4{
+    width: 350px;
+    height: 510px;
+
+    border-radius: 10px;
+}
+.principal{
+    display: flex;
+    justify-content: center;
+}
+#main_img{
+    width: 100%;
+
+    border-radius: 10px;
+}
+.other-img{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+#other_img1, #other_img2, #other_img3{
+    width: 30%;
+    height: 100px;
+
+    border-radius: 10px;
+}
+.compra{
+    padding-left: 20px;
+}
+#capa{
+    width: 300px;
+    height: 180px;
+
+    border-radius: 20px;
+}
+.valores{
+    width: 100%;
+    
+    background-color: rgb(55, 67, 77);
+    color: white;
+
+    display: flex;
+    
+    border-radius: 15px 15px 0px 0px;
+}
+.B_compra{
+    width: 100%;
+    height: 50px;
+
+    margin-top: 0.5px;
+
+    font-size: 25px;
+    
+    background-color: rgb(55, 67, 77);
+    color: white;
+    
+    border-radius: 0px 0px 15px 15px;
+    border: none;
+}
+.cep{
+    background-color: rgb(55, 67, 77);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+
+    border-radius:15px;
+    border: none;
+}
+.cep > input{
+    border: none;
+    text-align: center;
+    width: 150px;
+    border-radius: 20px;
+}
+.cep > button{
+    border: none;
+    text-align: center;
+    height: 30px;
+    width: 90%;
+    border-radius: 20px;
+}
+#cep{
+    height: 30px;
+    width: 90%;
+}
+.regiao{
+    background-color: rgba(240, 248, 255, 0);
+
+    border: none;
+
+    color: white;
+}

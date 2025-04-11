@@ -1,0 +1,64 @@
+{
+    "Jogos" : [
+        {
+            "id" : 1,
+            "nome" : "Bloodborn",
+            "preco" : "105.90"
+        },
+        {
+            "id" : 2,
+            "nome" : "Cyberpunk",
+            "preco" : "202.00"
+        },
+        {
+            "id" : 3,
+            "nome" : "Dark Souls",
+            "preco" : "148.80"
+        },
+        {
+            "id" : 4,
+            "nome" : "Elden Ring",
+            "preco" : "204.27"
+        },
+        {
+            "id" : 5,
+            "nome" : "Gears of War",
+            "preco" : "107.55"
+        },
+        {
+            "id" : 6,
+            "nome" : "God of War",
+            "preco" : "249.01"
+        },
+        {
+            "id" : 7,
+            "nome" : "HALO",
+            "preco" : "178.91"
+        },
+        {
+            "id" : 8,
+            "nome" : "Horizon",
+            "preco" : "190.39"
+        },
+        {
+            "id" : 9,
+            "nome" : "Metal Gear",
+            "preco" : "299.00"
+        },
+        {
+            "id" : 10,
+            "nome" : "Minecraft",
+            "preco" : "100.00"
+        },
+        {
+            "id" : 11,
+            "nome" : "Persona",
+            "preco" : "115.49"
+        },
+        {
+            "id" : 12,
+            "nome" : "Pokemon",
+            "preco" : "624.90"
+        }
+    ]
+}

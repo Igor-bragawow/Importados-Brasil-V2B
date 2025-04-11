@@ -1,0 +1,24 @@
+{
+    "frete":[
+        {
+            "regiao":"Sudeste",
+            "frete":5.00
+        },
+        {
+            "regiao":"Sul",
+            "frete":10.00
+        },
+        {
+            "regiao":"Norte",
+            "frete":15.00
+        },
+        {
+            "regiao":"Nordeste",
+            "frete":20.00
+        },
+        {
+            "regiao":"Centro-oeste",
+            "frete":10.00
+        }
+    ]
+}
